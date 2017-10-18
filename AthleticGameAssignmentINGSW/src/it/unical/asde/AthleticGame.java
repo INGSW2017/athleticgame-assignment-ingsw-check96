@@ -34,7 +34,8 @@ public class AthleticGame {
 		String best = null;
 		long bestTime = Long.MAX_VALUE;
 
-		for (String participant : arrivals.keySet()) {
+		for (String participant : arrivals.keySet())
+		{
 			if (getPartecipiantTime(participant) < bestTime) 
 			{
 				best = participant;
