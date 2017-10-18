@@ -21,21 +21,24 @@ public class AthleticGame {
 		return sport;
 	}
 
-	public long getParecipiantTime(String participant) throws IllegalArgumentException {
+	public long getPartecipiantTime(String participant) throws IllegalArgumentException
+	{
 		if(!arrivals.containsKey(participant)) {
 			throw new IllegalArgumentException("Invalid partecipiant "+participant);
 		}
 		return ChronoUnit.MILLIS.between(startTime, arrivals.get(participant));
 	}
 
-	public String getWinner() {
+	public String getWinner() 
+	{
 		String best = null;
 		long bestTime = Long.MAX_VALUE;
 
 		for (String participant : arrivals.keySet()) {
-			if (getParecipiantTime(participant) < bestTime) {
+			if (getPartecipiantTime(participant) < bestTime) 
+			{
 				best = participant;
-				bestTime = getParecipiantTime(participant);
+				bestTime = getPartecipiantTime(participant);
 			}
 		}
 
@@ -50,7 +53,8 @@ public class AthleticGame {
 		return arrivals;
 	}
 	
-	public void reset() {
+	public void reset() 
+	{
 		arrivals.clear();
 	}
 	
